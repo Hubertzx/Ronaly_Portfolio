@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ronaly V. Garabato — Data Entry & Shopify Virtual Assistant</title>
+<meta name="description" content="Portfolio of Ronaly V. Garabato, Data Entry Virtual Assistant and Shopify support specialist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC;
+    --paper-line:#DAD3C2;
+    --ink:#1E2A22;
+    --ink-soft:#4C5850;
+    --ledger-green:#2F4A3B;
+    --gold:#A9803D;
+    --gold-soft:#D8C39B;
+    --white:#FFFFFF;
+    --row-h:64px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold-soft);}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* Ledger background rows */
+  .ledger-bg{
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--row-h) - 1px),
+      var(--paper-line) calc(var(--row-h) - 1px),
+      var(--paper-line) var(--row-h)
+    );
+  }
+
+  header{
+    padding:64px 0 40px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.12em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--gold);
+    display:inline-block;
+    border-radius:1px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-size:clamp(38px,6vw,64px);
+    font-weight:500;
+    line-height:1.03;
+    margin:0 0 14px;
+    letter-spacing:-.01em;
+  }
+  .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:15px;
+    color:var(--ledger-green);
+    margin:0 0 28px;
+  }
+  .lede{
+    font-size:17px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin:0 0 34px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .hero-meta div{
+    flex:1 1 160px;
+    padding:14px 0;
+    border-right:1px solid var(--paper-line);
+  }
+  .hero-meta div:last-child{border-right:none;}
+  .hero-meta .k{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:4px;
+  }
+  .hero-meta .v{font-size:14.5px;font-weight:600;}
+
+  .hero-photo{
+    position:absolute;
+    top:56px;
+    right:28px;
+    width:132px;
+    height:132px;
+    border-radius:4px;
+    overflow:hidden;
+    border:3px solid var(--white);
+    box-shadow:0 6px 20px rgba(30,42,34,.18);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  section{padding:56px 0;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:30px;
+  }
+  .tab{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--white);
+    background:var(--ledger-green);
+    padding:4px 10px;
+    border-radius:2px;
+    letter-spacing:.06em;
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:500;
+    margin:0;
+  }
+
+  /* Ledger rows (skills / entries) */
+  .row{
+    display:grid;
+    grid-template-columns:40px 1fr auto;
+    align-items:center;
+    gap:18px;
+    padding:16px 4px;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .row:first-of-type{border-top:1px solid var(--ink);}
+  .row-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--gold);
+  }
+  .row-label{font-size:15.5px;font-weight:500;}
+  .row-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    white-space:nowrap;
+  }
+
+  /* Experience entries */
+  .entry{
+    padding:26px 0;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .entry:first-of-type{border-top:1px solid var(--ink);}
+  .entry-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    margin-bottom:6px;
+  }
+  .entry-title{font-size:17px;font-weight:700;}
+  .entry-date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .entry-sub{
+    font-size:13.5px;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .entry ul{margin:0;padding-left:18px;}
+  .entry li{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .stores{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .store-chip{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    border:1px solid var(--ledger-green);
+    color:var(--ledger-green);
+    padding:4px 9px;
+    border-radius:20px;
+  }
+
+  /* Certificates grid */
+  .certs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+  }
+  .cert{
+    background:var(--white);
+    border:1px solid var(--paper-line);
+    border-radius:6px;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cert:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(30,42,34,.12);}
+  .cert-img{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:#EFEAE0;
+  }
+  .cert-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  .cert-body{padding:14px 16px 18px;}
+  .cert-title{font-size:14px;font-weight:700;margin-bottom:3px;}
+  .cert-issuer{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  /* Grad callout */
+  .grad-strip{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:var(--ledger-green);
+    color:var(--paper);
+    border-radius:8px;
+    padding:22px 26px;
+    margin-top:36px;
+  }
+  .grad-strip img{
+    width:64px;height:64px;border-radius:50%;object-fit:cover;
+    border:2px solid var(--gold-soft);
+  }
+  .grad-strip p{margin:0;font-size:14.5px;line-height:1.55;}
+  .grad-strip strong{color:var(--gold-soft);}
+
+  footer{
+    padding:50px 0 60px;
+    border-top:1px solid var(--ink);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:22px;
+    margin-bottom:34px;
+  }
+  .contact-grid .k{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:6px;
+  }
+  .contact-grid .v{font-size:15.5px;font-weight:600;}
+  .contact-grid a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink-soft);}
+  .foot-note{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:600px){
+    .hero-photo{position:static;width:96px;height:96px;margin-bottom:24px;}
+    header{padding-top:40px;}
+    .row{grid-template-columns:28px 1fr;}
+    .row-tag{grid-column:2;font-size:10.5px;}
+  }
+
+  /* --- Progress bar (ledger fill) --- */
+  .progress-rail{
+    position:fixed;top:0;left:0;right:0;height:3px;
+    background:transparent;z-index:200;
+  }
+  .progress-fill{
+    height:100%;width:0%;
+    background:var(--gold);
+    transition:width .08s linear;
+  }
+
+  /* --- Reveal-on-scroll --- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);
+  }
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  .row{position:relative;}
+  .row .check{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ledger-green);
+    opacity:0;
+    transform:scale(.5);
+    transition:opacity .35s ease .1s, transform .35s ease .1s;
+    margin-left:auto;
+  }
+  .row.in-view .check{opacity:1;transform:scale(1);}
+
+  .entry{
+    border-left:2px solid transparent;
+    padding-left:0;
+    transition:border-color .3s ease, padding-left .3s ease;
+  }
+  .entry:hover{border-left-color:var(--gold);padding-left:14px;}
+
+  .hero-photo{
+    opacity:0;
+    animation:fadeUp .7s cubic-bezier(.4,0,.2,1) .1s forwards;
+  }
+  header h1{opacity:0;animation:fadeUp .7s cubic-bezier(.4,0,.2,1) .25s forwards;}
+  header .role{opacity:0;animation:fadeUp .7s cubic-bezier(.4,0,.2,1) .38s forwards;}
+  header .lede{opacity:0;animation:fadeUp .7s cubic-bezier(.4,0,.2,1) .5s forwards;}
+  header .hero-meta{opacity:0;animation:fadeUp .7s cubic-bezier(.4,0,.2,1) .62s forwards;}
+  header .eyebrow{opacity:0;animation:fadeUp .6s cubic-bezier(.4,0,.2,1) 0s forwards;}
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  /* --- Lightbox --- */
+  .cert{cursor:zoom-in;}
+  .lightbox{
+    position:fixed;inset:0;
+    background:rgba(30,42,34,.88);
+    display:flex;align-items:center;justify-content:center;
+    padding:40px;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s ease;
+    z-index:300;
+  }
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{
+    max-width:min(90vw,760px);
+    max-height:85vh;
+    border-radius:6px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    transform:scale(.92);
+    transition:transform .25s ease;
+  }
+  .lightbox.open img{transform:scale(1);}
+  .lightbox-close{
+    position:absolute;top:24px;right:28px;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--paper);
+    background:none;border:1px solid var(--paper);
+    border-radius:20px;
+    padding:6px 14px;
+    font-size:12px;
+    cursor:pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .hero-photo, header h1, header .role, header .lede, header .hero-meta, header .eyebrow{
+      opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;
+    }
+  }
+
+  /* --- Signature element: ring-binder holes down the left margin --- */
+  body::before{
+    content:"";
+    position:fixed;
+    top:0;left:0;
+    width:34px;height:100%;
+    background-image: radial-gradient(circle, var(--paper-line) 4.5px, transparent 4.6px);
+    background-size:34px 90px;
+    background-position:12px 40px;
+    z-index:1;
+    pointer-events:none;
+  }
+  body::after{
+    content:"";
+    position:fixed;
+    top:0;left:34px;
+    width:1px;height:100%;
+    background:var(--paper-line);
+    z-index:1;
+    pointer-events:none;
+  }
+  @media (max-width:760px){ body::before, body::after{display:none;} }
+  .wrap{position:relative;z-index:2;}
+
+  /* --- Hero ambient glow --- */
+  header{overflow:visible;}
+  header::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-120px;
+    width:420px;height:420px;
+    background:radial-gradient(circle, rgba(169,128,61,.16) 0%, transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+  header > *{position:relative;z-index:1;}
+
+  /* --- Verified stamp badge --- */
+  .stamp{
+    position:absolute;
+    top:196px; right:34px;
+    width:74px;height:74px;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-14deg) scale(.85);
+    opacity:0;
+    animation:stampIn .4s cubic-bezier(.34,1.56,.64,1) 1.1s forwards;
+    background:var(--paper);
+  }
+  .stamp span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:9.5px;
+    color:var(--gold);
+    letter-spacing:.06em;
+    text-align:center;
+    line-height:1.3;
+    text-transform:uppercase;
+  }
+  @keyframes stampIn{
+    0%{opacity:0;transform:rotate(-14deg) scale(.5);}
+    70%{opacity:1;transform:rotate(-14deg) scale(1.08);}
+    100%{opacity:1;transform:rotate(-14deg) scale(1);}
+  }
+  @media (max-width:600px){ .stamp{display:none;} }
+
+  /* --- Animated heading underline --- */
+  .section-head{position:relative;padding-bottom:14px;}
+  .section-head::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    height:2px;width:0;
+    background:linear-gradient(90deg, var(--gold), transparent);
+    transition:width .8s cubic-bezier(.4,0,.2,1) .1s;
+  }
+  section.in-view .section-head::after,
+  header.in-view .section-head::after{width:120px;}
+  .reveal.in-view .section-head::after{width:120px;}
+
+  /* --- Cert tilt-on-hover --- */
+  .cert{
+    transform-style:preserve-3d;
+    perspective:800px;
+    will-change:transform;
+  }
+  .cert-img img{transition:transform .5s cubic-bezier(.4,0,.2,1), filter .4s ease;}
+  .cert:hover .cert-img img{transform:scale(1.06);}
+  .cert-img{position:relative;}
+  .cert-img::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(140deg, rgba(169,128,61,0) 40%, rgba(169,128,61,.14) 100%);
+    opacity:0;
+    transition:opacity .4s ease;
+  }
+  .cert:hover .cert-img::after{opacity:1;}
+
+  /* --- Gold corner accents on rows on hover --- */
+  .row{transition:background .25s ease, padding-left .25s ease;}
+  .row:hover{background:rgba(169,128,61,.06);padding-left:10px;}
+
+  /* --- Entry number ghost mark --- */
+  .entry{position:relative;overflow:hidden;}
+  .entry::before{
+    content:attr(data-index);
+    position:absolute;
+    right:-6px; top:6px;
+    font-family:'Fraunces',serif;
+    font-size:88px;
+    color:var(--ink);
+    opacity:.035;
+    line-height:1;
+    pointer-events:none;
+  }
+
+  /* --- Grad strip shine --- */
+  .grad-strip{position:relative;overflow:hidden;}
+  .grad-strip::before{
+    content:"";
+    position:absolute;
+    top:0;left:-60%;
+    width:40%;height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.12), transparent);
+    animation:shine 5s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%{left:-60%;}
+    45%{left:120%;}
+    100%{left:120%;}
+  }
+</style>
+</head>
+<body>
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+
+<div class="wrap">
+  <header>
+    <div class="hero-photo"><img src="assets/profile-formal.jpg" alt="Ronaly V. Garabato"></div>
+    <div class="stamp"><span>Verified<br>Records<br>2026</span></div>
+    <p class="eyebrow">Ledger No. 001 — Profile</p>
+    <h1>Ronaly V.<br>Garabato</h1>
+    <p class="role">Data Entry Virtual Assistant / Shopify &amp; Web Platform Support</p>
+    <p class="lede">I keep records straight and stores running — accurate data entry, clean product listings, and dependable remote support for e-commerce and business platforms.</p>
+    <div class="hero-meta">
+      <div><span class="k">Based in</span><span class="v">Negros Occidental, PH</span></div>
+      <div><span class="k">Available for</span><span class="v">Remote / Freelance</span></div>
+      <div><span class="k">Core tools</span><span class="v">Excel · Shopify · HTML/CSS</span></div>
+    </div>
+  </header>
+
+  <section class="ledger-bg reveal" id="skills">
+    <div class="section-head"><span class="tab">01</span><h2>What I bring to the row</h2></div>
+
+    <div class="row"><span class="row-num">i</span><span class="row-label">Data entry, cleaning &amp; organizing</span><span class="row-tag">Daily driver</span><span class="check">✓</span></div>
+    <div class="row"><span class="row-num">ii</span><span class="row-label">Spreadsheet management (MS Excel)</span><span class="row-tag">Core skill</span><span class="check">✓</span></div>
+    <div class="row"><span class="row-num">iii</span><span class="row-label">Shopify store setup &amp; product listing</span><span class="row-tag">E-commerce</span><span class="check">✓</span></div>
+    <div class="row"><span class="row-num">iv</span><span class="row-label">Document prep (MS Word, PowerPoint)</span><span class="row-tag">Admin</span><span class="check">✓</span></div>
+    <div class="row"><span class="row-num">v</span><span class="row-label">Records management &amp; filing</span><span class="row-tag">Government-grade</span><span class="check">✓</span></div>
+    <div class="row"><span class="row-num">vi</span><span class="row-label">HTML &amp; CSS</span><span class="row-tag">Intermediate</span><span class="check">✓</span></div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="section-head"><span class="tab">02</span><h2>Experience on record</h2></div>
+
+    <div class="entry" data-index="01">
+      <div class="entry-top">
+        <span class="entry-title">Data Entry Virtual Assistant — Freelance / Collaborative</span>
+        <span class="entry-date">2025 – Present</span>
+      </div>
+      <div class="entry-sub">Product data, catalog setup &amp; platform support</div>
+      <ul>
+        <li>Performed accurate data entry and data organization for Lymora Logistics, a PHP/MySQL freight platform</li>
+        <li>Handled product listing and catalog data entry for Shopify stores — pricing, descriptions, and inventory details</li>
+        <li>Supported store setup tasks across projects, helping stores launch on schedule</li>
+        <li>Worked remotely alongside a developer-led team, meeting accuracy and turnaround standards</li>
+      </ul>
+      <div class="stores">
+        <span class="store-chip">Lymora Logistics</span>
+        <span class="store-chip">Obersol</span>
+        <span class="store-chip">Dravmore.com</span>
+        <span class="store-chip">Lurend.com</span>
+      </div>
+    </div>
+
+    <div class="entry" data-index="02">
+      <div class="entry-top">
+        <span class="entry-title">OJT Intern — Human Resources</span>
+        <span class="entry-date">2025 · 5 Months</span>
+      </div>
+      <div class="entry-sub">Municipality of Hinoba-an · Local Government Unit</div>
+      <ul>
+        <li>Performed data entry, cleaning, and spreadsheet management to support payroll and attendance monitoring</li>
+        <li>Maintained employee 201 files in full compliance with government filing standards</li>
+        <li>Prepared official documents and memos, cutting document turnaround time</li>
+        <li>Handled sensitive HR information with professionalism and confidentiality</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certificates" class="reveal">
+    <div class="section-head"><span class="tab">03</span><h2>Certificates on file</h2></div>
+    <div class="certs">
+      <div class="cert" data-full="assets/cert-msword.jpg">
+        <div class="cert-img"><img src="assets/cert-msword.jpg" alt="Microsoft Word Certification"></div>
+        <div class="cert-body">
+          <div class="cert-title">Microsoft Word Certification</div>
+          <div class="cert-issuer">EDUCBA · Completion</div>
+        </div>
+      </div>
+      <div class="cert" data-full="assets/cert-webdev.jpg">
+        <div class="cert-img"><img src="assets/cert-webdev.jpg" alt="Web Development Basics Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-title">Web Development Basics: HTML, CSS &amp; JS</div>
+          <div class="cert-issuer">EPCPS · Oct 2025</div>
+        </div>
+      </div>
+      <div class="cert" data-full="assets/cert-webinar.jpg">
+        <div class="cert-img"><img src="assets/cert-webinar.jpg" alt="International Webinar in Information Technology Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-title">Int'l Webinar in Information Technology 2025</div>
+          <div class="cert-issuer">Aurora State College of Tech · Feb 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grad-strip">
+      <img src="assets/profile-grad.jpg" alt="Ronaly Garabato graduation portrait">
+      <p><strong>BS Information Technology</strong> — Central Philippines State University, Hinoba-an Campus · Graduate of 2026</p>
+    </div>
+  </section>
+
+  <footer id="contact" class="reveal">
+    <div class="section-head"><span class="tab">04</span><h2>Get in touch</h2></div>
+    <div class="contact-grid">
+      <div><span class="k">Email</span><span class="v"><a href="mailto:ronalyvasquezgarabato07@gmail.com">ronalyvasquezgarabato07@gmail.com</a></span></div>
+      <div><span class="k">Phone</span><span class="v">0975 951 6575</span></div>
+      <div><span class="k">Location</span><span class="v">Hinoba-an, Negros Occidental, PH</span></div>
+      <div><span class="k">Languages</span><span class="v">Filipino · English · Hiligaynon</span></div>
+    </div>
+    <p class="foot-note">© 2026 Ronaly V. Garabato — Portfolio last updated for Data Entry VA applications.</p>
+  </footer>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">Close ✕</button>
+  <img src="" alt="Certificate enlarged" id="lightboxImg">
+</div>
+
+<script>
+  // Scroll progress (ledger fill)
+  const progressFill = document.getElementById('progressFill');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    progressFill.style.width = (height > 0 ? (scrolled/height)*100 : 0) + '%';
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  const revealTargets = document.querySelectorAll('.reveal, .row, .entry');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  revealTargets.forEach(t=>io.observe(t));
+
+  // Certificate lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cert').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      lightboxImg.src = card.dataset.full;
+      lightbox.classList.add('open');
+    });
+  });
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+
+  // Cert card tilt-on-hover
+  document.querySelectorAll('.cert').forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      const rx = ((y / r.height) - 0.5) * -8;
+      const ry = ((x / r.width) - 0.5) * 8;
+      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform = '';
+    });
+  });
+</script>
+
+</body>
+</html>
